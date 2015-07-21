@@ -4,7 +4,7 @@ Finish line is a tiny bookmarklet for indicating the end of an article within th
 
 Finish line detects the endpoint of the actual article text and adds a little indicator near your scrollbar to show you where the finish line is.
 
-<a href='javascript: (function() {
+<a href="javascript: (function() {
 	var req = new XMLHttpRequest(),
 			containersMap,
 			fl;
@@ -90,7 +90,7 @@ Finish line detects the endpoint of the actual article text and adds a little in
 	}
 
 	req.send();
-})();'>Drag this to your bookmarks bar to install</a>
+})();">Drag this to your bookmarks bar to install</a>
 
 Currently supported:
 
