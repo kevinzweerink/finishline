@@ -1,6 +1,7 @@
 {
 	"medium.com" : ".postArticle-content",
 	"nytimes.com": "#story-body",
+	"huffingtonpost.com" : ".entry-component component",
 	"default" : [
 		"#article",
 		"#article-content",
