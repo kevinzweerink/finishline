@@ -1,13 +1,7 @@
 (function() {
-	var containersMap = {
-		'medium.com' : '.postArticle-content',
-		'nytimes.com': '#story-body',
-		default : [
-			'#article',
-			'#article-content',
-			'#content'
-		]
-	}
+	var req = new XMLHttpRequest(),
+			containersMap,
+			fl;
 
 	function getArticleContainerTerminal(selector) {
 		// If no selector passed, loop through default selectors
@@ -41,20 +35,57 @@
 	function addFinishLine(proportion) {
 		var el = document.createElement('div');
 		el.style.position = 'fixed';
-		el.style.right = '0';
+		el.style.right = '3px';
 		el.style.top = proportion + 'vh';
 		el.style.background = '#000'
-		el.style.width = '12px';
-		el.style.height = '3px';
+		el.style.width = '6px';
+		el.style.height = '6px';
+		el.style.borderRadius = '4px';
+		el.style.zIndex = 10000;
+		el.style.transition = 'top .15s ease';
+		el.style.webkitTransition = 'top .15s ease';
 
 		document.body.appendChild(el);
+
+		return el;
 	}
 
-	var finish = getProportionalPosition(
-		getArticleContainerTerminal(
-			getSelectorForHost()
-		)
-	);
+	function getFinish() {
+		return getProportionalPosition(
+			getArticleContainerTerminal(
+				getSelectorForHost()
+			)
+		);
+	}
 
-	addFinishLine(finish);
+	function updateFinishLine() {
+		var finish = getFinish();
+
+		if (!fl) {
+			fl = addFinishLine(finish);
+		}
+		
+		if (fl) {
+			fl.style.top = finish + 'vh';
+		}
+
+		console.log(fl);
+
+		return fl;
+	}
+
+	req.open('GET', 'http://127.0.0.1/map.js', true);
+
+	req.onload = function() {
+		console.log('success');
+		containersMap = JSON.parse(request.responseText);
+		fl = updateFinishLine();
+		window.setInterval(updateFinishLine, 700);
+	}
+
+	req.onerror = function() {
+		console.log('failure');
+	}
+
+	req.send();
 })();
