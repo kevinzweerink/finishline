@@ -77,14 +77,10 @@
 	req.open('GET', 'https://raw.githubusercontent.com/kevinzweerink/finishline/master/map.json', true);
 
 	req.onload = function() {
-		console.log(req.responseText);
+		console.log(JSON.parse(req.responseText));
 		containersMap = JSON.parse(req.responseText);
 		fl = updateFinishLine();
 		window.setInterval(updateFinishLine, 700);
-	}
-
-	req.onerror = function() {
-		console.log('failure');
 	}
 
 	req.send();
