@@ -5,5 +5,5 @@
 		'#article',
 		'#article-content',
 		'#content'
-	];
+	]
 }
