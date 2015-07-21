@@ -74,11 +74,12 @@
 		return fl;
 	}
 
-	req.open('GET', 'http://127.0.0.1/map.js', true);
+	req.open('GET', 'https://raw.githubusercontent.com/kevinzweerink/finishline/master/map.js', true);
 
 	req.onload = function() {
-		console.log('success');
-		containersMap = JSON.parse(request.responseText);
+		console.log(req.responseText);
+		containersMap = JSON.parse(req.responseText);
+		console.log(containersMap);
 		fl = updateFinishLine();
 		window.setInterval(updateFinishLine, 700);
 	}
