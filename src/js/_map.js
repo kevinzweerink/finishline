@@ -9,7 +9,7 @@ var map =
 	"slate" : ".main .content",
 	"washingtonpost" : "#article-body",
 	"propublica" : "article .body-text",
-	
+	"npr" : "#storytext",
 	"default" : [
 		"#article"
 	]
