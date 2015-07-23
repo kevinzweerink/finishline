@@ -15,9 +15,9 @@ var map =
 	"nymag" : ".story",
 	"buzzfeed" : "#buzz_sub_buzz",
 	"bostonglobe" : ".article-text",
-	"latimes" : "trb_mainContent",
-	"theverge" : "m-entry__content",
-	"theguardian" : "content__main",	
+	"latimes" : ".trb_mainContent",
+	"theverge" : ".m-entry__content",
+	"theguardian" : ".content__main",	
 
 	"default" : [
 		"#article",
