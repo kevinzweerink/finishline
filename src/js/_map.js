@@ -19,7 +19,6 @@ var map =
 	"theverge" : ".m-entry__content",
 	"theguardian" : ".content__main",
 	"qz" : ".item-body",
-	"rollingstone" : ".primary",
 	"politico" : ".story-text",
 	"newrepublic" : ".body.text",
 	"gq" : ".body-text",
