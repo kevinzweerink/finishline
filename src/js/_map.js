@@ -5,6 +5,9 @@ var map =
 	"nytimes" : "#story",
 	"cnn" : "#body-text",
 	"huffingtonpost" : ".component.entry-component",
+	"medium" : ".postArticle-content",
+	"slate" : ".main .content",
+	"washington-post" : "#article-body",
 	"default" : [
 		"#article"
 	]

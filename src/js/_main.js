@@ -1,5 +1,6 @@
 function FinishLine() {
 	this.selector = '';
+	this.remoteURL = 'https://raw.githubusercontent.com/kevinzweerink/finishline/master/map.json';
 	this.clean();
 
 	// Init
@@ -7,16 +8,54 @@ function FinishLine() {
 }
 
 FinishLine.prototype.clean = function () {
-	delete document.querySelector('.finish-line');
+	var preexisting = document.querySelector('.finish-line');
+
+	if (preexisting) {
+		preexisting.parentNode.removeChild(preexisting);
+	}
 }
 
 FinishLine.prototype.getMap = function () {
-	var connection = navigator.onLine;
+	var connection = navigator.onLine,
+		localVersion = 'finish-line-map-data';
 
 	if (connection) {
-		this.map = map;
-		this.start();
+		var fl = this,
+			req = new XMLHttpRequest();
+
+		try {
+		
+			req.open('GET', this.remoteURL, true);
+
+			req.onload = function () {
+				if (req.status >= 200 && req.status < 400) {
+					console.log('Successfully retrieved remote map')
+					fl.map = JSON.parse(req.responseText);
+				} else {
+					console.log('Connection error, falling back to default data')
+					fl.map = map;
+				}
+
+				fl.start();
+			}
+
+			req.onerror = function () {
+				console.log('Could not connect, falling back to default data');
+
+				fl.map = map;
+				fl.start();
+			}
+
+			req.send();
+		}
+
+		catch(err) {
+			console.log("CSP restriction prevented remote map access, falling back now")
+			fl.map = map;
+			fl.start();
+		}
 	} else {
+		console.log('No internet connection, falling back to default data')
 		this.map = map;
 		this.start();
 	}
