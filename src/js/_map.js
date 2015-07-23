@@ -7,7 +7,9 @@ var map =
 	"huffingtonpost" : ".component.entry-component",
 	"medium" : ".postArticle-content",
 	"slate" : ".main .content",
-	"washington-post" : "#article-body",
+	"washingtonpost" : "#article-body",
+	"propublica" : "article .body-text",
+	
 	"default" : [
 		"#article"
 	]
