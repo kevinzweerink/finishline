@@ -8,7 +8,7 @@ var map =
 	"medium" : ".postArticle-content",
 	"slate" : ".main .content",
 	"washingtonpost" : "#article-body",
-	"propublica" : "article .body-text",
+	"propublica" : "article .bodytext",
 	"npr" : "#storytext",
 	"default" : [
 		"#article"

@@ -102,7 +102,14 @@ FinishLine.prototype.flash = function () {
 	el.style.opacity = '1';
 	window.setTimeout(function() {
 		el.style.opacity = '0.3';
-	}, 300);
+	}, 500);
+}
+
+FinishLine.prototype.animateIn = function () {
+	var el = this.el;
+	this.flash();
+	el.style.webkitTransform = this.transformString(this.proportion);
+	el.style.transform = this.transformString(this.proportion);
 }
 
 FinishLine.prototype.transformString = function (proportion) {
@@ -131,14 +138,16 @@ FinishLine.prototype.placeFinish = function () {
 		el.style.position = 'fixed';
 		el.style.right = '3px';
 		el.style.top = '0';
-		el.style.webkitTransform = this.transformString(this.proportion);
-		el.style.transform = this.transformString(this.proportion);
+		el.style.webkitTransform = this.transformString(-0.1);
+		el.style.transform = this.transformString(-0.1);
 		el.style.opacity = '0.3';
-		el.style.webkitTransition = 'transform .15s ease .15s, opacity .15s ease';
-		el.style.transition = 'transform .15s ease .15s, opacity .15s ease';
+		el.style.webkitTransition = 'transform .5s cubic-bezier(.42,-0.11,.13,1.29) .15s, opacity .15s ease';
+		el.style.transition = 'transform .5s cubic-bezier(.42,-0.11,.13,1.29) .15s, opacity .15s ease';
 
 	document.body.appendChild(el);
+
 	this.el = el;
+	window.setTimeout(this.animateIn.bind(this), 10);
 }
 
 FinishLine.prototype.listen = function () {

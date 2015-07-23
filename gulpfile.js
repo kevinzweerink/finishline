@@ -17,6 +17,14 @@ var scripts = [
 	paths.js + '_map.js',
 	paths.js + '_main.js',
 	paths.js + '_caboose.js'
+];
+
+var watch = [
+	paths.js + '_engine.js',
+	paths.js + '_map.js',
+	paths.js + '_main.js',
+	paths.js + '_caboose.js',
+	paths.templates + 'index.html'
 ]
 
 gulp.task('compile', function() {
@@ -46,7 +54,7 @@ gulp.task('export', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(scripts, ['compile', 'build', 'export']);
+	gulp.watch(watch, ['compile', 'build', 'export']);
 });
 
 gulp.task('default', ['compile','build', 'export'], function() {
