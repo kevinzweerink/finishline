@@ -142,7 +142,7 @@ FinishLine.prototype.placeFinish = function () {
 		el.style.opacity = '0.3';
 		el.style.webkitTransition = 'transform .5s cubic-bezier(.42,-0.11,.13,1.29) .15s, opacity .15s ease';
 		el.style.transition = 'transform .5s cubic-bezier(.42,-0.11,.13,1.29) .15s, opacity .15s ease';
-		el.style.zIndex = '1000000'
+		el.style.zIndex = '1000000000000'
 
 	document.body.appendChild(el);
 
