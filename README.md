@@ -4,8 +4,6 @@ Finish line is a tiny bookmarklet for indicating the end of an article within th
 
 Finish line detects the endpoint of the actual article text and adds a little indicator near your scrollbar to show you where the finish line is.
 
-Currently supported:
+Install from:
 
-- New York Times
-- Medium
-- Huffington Post
+[kevinzweerink.com/finishline](http://kevinzweerink.com/finishline/)
