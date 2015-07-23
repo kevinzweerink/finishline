@@ -1,10 +1,11 @@
 .container {
-	max-width: 40%;
+	max-width: 500px;
 	margin: auto;
 	text-align: center;
 	margin-top: 10rem;
 	font-family: 'Roboto Mono', sans-serif;
 	font-weight: 500;
+	color:#242323;
 }
 
 .bookmarklet {
@@ -13,7 +14,7 @@
 	line-height: 1;
 	display: inline-block;
 	text-decoration: none;
-	padding: 20px;
+	padding: 30px 20px 10px;
 	background-color: #FFF;
 	border-radius: 8px;
 	-webkit-transition: background .15s ease;

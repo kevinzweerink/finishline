@@ -23,8 +23,7 @@ FinishLine.prototype.getMap = function () {
 		var fl = this,
 			req = new XMLHttpRequest();
 
-		try {
-		
+		try {	
 			req.open('GET', this.remoteURL, true);
 
 			req.onload = function () {

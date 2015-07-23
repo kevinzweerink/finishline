@@ -10,7 +10,22 @@ var map =
 	"washingtonpost" : "#article-body",
 	"propublica" : "article .bodytext",
 	"npr" : "#storytext",
+	"newyorker" : "#articleBody",
+	"theatlantic" : "#article",
+	"nymag" : ".story",
+	"buzzfeed" : "#buzz_sub_buzz",
+	"bostonglobe" : ".article-text",
+	"latimes" : "trb_mainContent",
+	"theverge" : "m-entry__content",
+	"theguardian" : "content__main",	
+
 	"default" : [
-		"#article"
+		"#article",
+		"#story",
+		"#articleBody",
+		"#storyBody",
+		".story",
+		".article",
+		".body"
 	]
 }
