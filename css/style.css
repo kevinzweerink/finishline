@@ -1,32 +1,48 @@
 .container {
-	max-width: 500px;
+	max-width: 600px;
 	margin: auto;
 	text-align: center;
 	margin-top: 10rem;
 	font-family: 'Roboto Mono', sans-serif;
 	font-weight: 500;
 	color:#242323;
+	border: 1px solid #e2e2e2;
+	border-radius: 20px;
+	padding: 0;
+	overflow: hidden;
 }
 
 .bookmarklet {
 	font-family: serif;
 	font-size: 140px;
 	line-height: 1;
-	display: inline-block;
+	display: block;
 	text-decoration: none;
-	padding: 30px 20px 10px;
+	padding: 100px 0 70px;
 	background-color: #FFF;
-	border-radius: 8px;
 	-webkit-transition: background .15s ease;
 	transition: background .15s ease;
-	margin-bottom: 5rem;
 }
 
 .bookmarklet:hover {
 	background-color: #f7f7f7;
 }
 
+h1, .about {
+	padding: 0 50px;
+	margin-top:0;
+}
+
+h1 {
+	border-top: 1px solid #e2e2e2;
+	padding-top: 50px;
+}
+
 .about a {
 	color: #CCC;
 	text-decoration: none;
+}
+
+.about {
+	padding-bottom: 50px;
 }
